@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Giriş — Quantor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <svg viewBox="0 0 100 100" class="login-logo">
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#0f172a" stroke-width="8" stroke-dasharray="160 220" stroke-linecap="round" style="transform: rotate(-10deg); transform-origin: 50% 50%;" />
+                    <circle cx="50" cy="50" r="12" fill="#3b82f6" />
+                    <line x1="68" y1="68" x2="90" y2="90" stroke="#3b82f6" stroke-width="10" stroke-linecap="round" />
+                </svg>
+                <h1>Quantor<span style="color: #3b82f6">.</span></h1>
+                <p>Admin Panel</p>
+            </div>
+
+            <% if (typeof flash !== 'undefined') { %>
+                <% if (flash && flash.error && flash.error.length) { %>
+                <div class="alert alert-error"><%= flash.error[0] %></div>
+                <% } %>
+                <% if (flash && flash.success && flash.success.length) { %>
+                <div class="alert alert-success"><%= flash.success[0] %></div>
+                <% } %>
+            <% } %>
+
+            <form action="/admin/login" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="username">İstifadəçi adı</label>
+                    <input type="text" id="username" name="username" required autofocus placeholder="admin">
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifrə</label>
+                    <input type="password" id="password" name="password" required placeholder="Şifrəniz">
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Daxil Ol</button>
+            </form>
+            <a href="/" class="back-link">Sayta qayıt</a>
+        </div>
+    </div>
+</body>
+</html>
