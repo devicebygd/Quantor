@@ -1,0 +1,150 @@
+<%- include('layout-start') %>
+
+<div class="admin-section">
+    <div class="admin-section-header">
+        <h2>Sayt Tənzimləmələri</h2>
+    </div>
+
+    <form action="/admin/settings" method="POST" class="admin-form">
+        <div class="form-section">
+            <h3>Ümumi Məlumatlar</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Sayt Adı</label>
+                    <input type="text" name="siteName" value="<%= siteSettings.siteName || '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Şüar (Tagline)</label>
+                    <input type="text" name="siteTagline" value="<%= siteSettings.siteTagline || '' %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Sayt Təsviri</label>
+                <textarea name="siteDescription" rows="2"><%= siteSettings.siteDescription || '' %></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Hero Bölməsi</h3>
+            <div class="form-group">
+                <label>Hero Başlıq</label>
+                <input type="text" name="heroTitle" value="<%= siteSettings.heroTitle || '' %>">
+            </div>
+            <div class="form-group">
+                <label>Hero Alt Başlıq</label>
+                <textarea name="heroSubtitle" rows="2"><%= siteSettings.heroSubtitle || '' %></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Statistika</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Statistika 1 Rəqəm</label>
+                    <input type="text" name="stat1Number" value="<%= siteSettings.heroStats && siteSettings.heroStats[0] ? siteSettings.heroStats[0].number : '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Statistika 1 Etiket</label>
+                    <input type="text" name="stat1Label" value="<%= siteSettings.heroStats && siteSettings.heroStats[0] ? siteSettings.heroStats[0].label : '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Statistika 2 Rəqəm</label>
+                    <input type="text" name="stat2Number" value="<%= siteSettings.heroStats && siteSettings.heroStats[1] ? siteSettings.heroStats[1].number : '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Statistika 2 Etiket</label>
+                    <input type="text" name="stat2Label" value="<%= siteSettings.heroStats && siteSettings.heroStats[1] ? siteSettings.heroStats[1].label : '' %>">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Statistika 3 Rəqəm</label>
+                    <input type="text" name="stat3Number" value="<%= siteSettings.heroStats && siteSettings.heroStats[2] ? siteSettings.heroStats[2].number : '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Statistika 3 Etiket</label>
+                    <input type="text" name="stat3Label" value="<%= siteSettings.heroStats && siteSettings.heroStats[2] ? siteSettings.heroStats[2].label : '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Statistika 4 Rəqəm</label>
+                    <input type="text" name="stat4Number" value="<%= siteSettings.heroStats && siteSettings.heroStats[3] ? siteSettings.heroStats[3].number : '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Statistika 4 Etiket</label>
+                    <input type="text" name="stat4Label" value="<%= siteSettings.heroStats && siteSettings.heroStats[3] ? siteSettings.heroStats[3].label : '' %>">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Haqqımızda</h3>
+            <div class="form-group">
+                <label>Haqqımızda Mətni</label>
+                <textarea name="aboutText" rows="4"><%= siteSettings.aboutText || '' %></textarea>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Əlaqə Məlumatları</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="text" name="phone" value="<%= siteSettings.phone || '' %>">
+                </div>
+                <div class="form-group">
+                    <label>E-poçt</label>
+                    <input type="email" name="email" value="<%= siteSettings.email || '' %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Ünvan</label>
+                <input type="text" name="address" value="<%= siteSettings.address || '' %>">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h3>Sosial Şəbəkələr</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Facebook</label>
+                    <input type="url" name="facebook" value="<%= siteSettings.facebook || '' %>">
+                </div>
+                <div class="form-group">
+                    <label>LinkedIn</label>
+                    <input type="url" name="linkedin" value="<%= siteSettings.linkedin || '' %>">
+                </div>
+                <div class="form-group">
+                    <label>Instagram</label>
+                    <input type="url" name="instagram" value="<%= siteSettings.instagram || '' %>">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Yadda Saxla</button>
+    </form>
+</div>
+
+<div class="admin-section" style="margin-top: 2rem;">
+    <div class="admin-section-header">
+        <h2>Şifrə Dəyişdir</h2>
+    </div>
+    <form action="/admin/settings/password" method="POST" class="admin-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Cari Şifrə</label>
+                <input type="password" name="currentPassword" required>
+            </div>
+            <div class="form-group">
+                <label>Yeni Şifrə</label>
+                <input type="password" name="newPassword" required minlength="6">
+            </div>
+            <div class="form-group">
+                <label>Yeni Şifrə (Təkrar)</label>
+                <input type="password" name="confirmPassword" required minlength="6">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Şifrəni Dəyişdir</button>
+    </form>
+</div>
+
+<%- include('layout-end') %>

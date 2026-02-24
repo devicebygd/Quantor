@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> — Quantor Admin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-page">
+    <aside class="admin-sidebar" id="adminSidebar">
+        <div class="admin-sidebar-header">
+            <a href="/admin" class="admin-logo">
+                <svg viewBox="0 0 100 100" class="admin-logo-icon">
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#ffffff" stroke-width="8" stroke-dasharray="160 220" stroke-linecap="round" style="transform: rotate(-10deg); transform-origin: 50% 50%;" />
+                    <circle cx="50" cy="50" r="12" fill="#3b82f6" />
+                    <line x1="68" y1="68" x2="90" y2="90" stroke="#3b82f6" stroke-width="10" stroke-linecap="round" />
+                </svg>
+                <span>Quantor<span style="color:#3b82f6">.</span></span>
+            </a>
+        </div>
+        <nav class="admin-nav">
+            <a href="/admin" class="admin-nav-item <%= currentPath === '/admin' ? 'active' : '' %>">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                Panel
+            </a>
+            <a href="/admin/services" class="admin-nav-item <%= currentPath === '/admin/services' ? 'active' : '' %>">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                Xidmətlər
+            </a>
+            <a href="/admin/partners" class="admin-nav-item <%= currentPath === '/admin/partners' ? 'active' : '' %>">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                Tərəfdaşlar
+            </a>
+            <a href="/admin/messages" class="admin-nav-item <%= currentPath === '/admin/messages' ? 'active' : '' %>">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Mesajlar
+            </a>
+            <a href="/admin/settings" class="admin-nav-item <%= currentPath === '/admin/settings' ? 'active' : '' %>">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                Tənzimləmələr
+            </a>
+        </nav>
+        <div class="admin-sidebar-footer">
+            <a href="/" class="admin-nav-item" target="_blank">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+                Saytı Gör
+            </a>
+            <a href="/admin/logout" class="admin-nav-item logout">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+                Çıxış
+            </a>
+        </div>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <button class="admin-menu-toggle" id="adminMenuToggle">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <h1 class="admin-page-title"><%= title %></h1>
+        </header>
+
+        <div class="admin-content">
+            <% if (flash.success && flash.success.length) { %>
+            <div class="alert alert-success"><%= flash.success[0] %></div>
+            <% } %>
+            <% if (flash.error && flash.error.length) { %>
+            <div class="alert alert-error"><%= flash.error[0] %></div>
+            <% } %>

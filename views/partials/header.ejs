@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> — <%= settings.siteName || 'Quantor' %></title>
+    <meta name="description" content="<%= settings.siteDescription || '' %>">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div id="page-loader" class="loader-overlay">
+        <svg viewBox="0 0 100 100" class="loader-icon">
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#e2e8f0" stroke-width="8" />
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#0f172a" stroke-width="8" stroke-dasharray="110 220" stroke-linecap="round" class="spin-normal" style="transform-origin: 50% 50%;" />
+            <circle cx="50" cy="50" r="35" fill="none" stroke="#3b82f6" stroke-width="4" stroke-dasharray="40 220" stroke-linecap="round" class="spin-fast" style="transform-origin: 50% 50%; animation-direction: reverse;" />
+            <circle cx="50" cy="50" r="12" fill="#0f172a" />
+            <line x1="68" y1="68" x2="90" y2="90" stroke="#3b82f6" stroke-width="10" stroke-linecap="round" />
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-inner">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 100 100" class="logo-icon">
+                    <circle cx="50" cy="50" r="35" fill="none" stroke="#0f172a" stroke-width="8" stroke-dasharray="160 220" stroke-linecap="round" style="transform: rotate(-10deg); transform-origin: 50% 50%;" />
+                    <circle cx="50" cy="50" r="12" fill="#3b82f6" />
+                    <line x1="68" y1="68" x2="90" y2="90" stroke="#3b82f6" stroke-width="10" stroke-linecap="round" />
+                </svg>
+                <span class="logo-text"><%= settings.siteName || 'Quantor' %><span class="logo-dot">.</span></span>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menyu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Ana Səhifə</a></li>
+                <li><a href="/xidmetler" class="<%= currentPath === '/xidmetler' ? 'active' : '' %>">Xidmətlərimiz</a></li>
+                <li><a href="/terefdaslar" class="<%= currentPath === '/terefdaslar' ? 'active' : '' %>">Tərəfdaşlarımız</a></li>
+                <li><a href="/elaqe" class="nav-cta <%= currentPath === '/elaqe' ? 'active' : '' %>">Əlaqə</a></li>
+            </ul>
+        </div>
+    </nav>
