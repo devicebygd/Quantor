@@ -53,10 +53,10 @@
             <div class="hero-text">
                 <div class="hero-badge">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                    İT Həllər Tərəfdaşınız
+                    <span id="hero-tagline">İT Həllər Tərəfdaşınız</span>
                 </div>
-                <h1>İT infrastrukturunuzu bizimlə gücləndirin</h1>
-                <p>Müasir texnologiyalar, peşəkar komanda və etibarlı həllərlə şirkətinizin rəqəmsal transformasiyasını təmin edirik.</p>
+                <h1 id="hero-title">İT infrastrukturunuzu bizimlə gücləndirin</h1>
+                <p id="hero-subtitle">Müasir texnologiyalar, peşəkar komanda və etibarlı həllərlə şirkətinizin rəqəmsal transformasiyasını təmin edirik.</p>
                 <div class="hero-actions">
                     <a href="/elaqe" class="btn btn-primary">Bizimlə Əlaqə</a>
                     <a href="/xidmetler" class="btn btn-outline">Xidmətlərimiz</a>
@@ -77,7 +77,7 @@
     <!-- Stats -->
     <section class="stats-section">
         <div class="container">
-            <div class="stats-grid">
+            <div class="stats-grid" id="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number">150+</span>
                     <span class="stat-label">Müştəri</span>
@@ -105,7 +105,7 @@
                 <div class="about-content">
                     <span class="section-badge">Haqqımızda</span>
                     <h2 class="section-title">Niyə <span class="text-blue">Quantor</span>?</h2>
-                    <p class="about-text">Quantor olaraq, biz şirkətlərə İT infrastruktur, lisenziyalaşdırma, server həlləri, şəbəkə qurulması və avtomatlaşdırma sahələrində peşəkar xidmətlər göstəririk. Hədəfimiz müştərilərimizin texnoloji ehtiyaclarını ən yüksək standartlarda qarşılamaqdır.</p>
+                    <p class="about-text" id="about-text">Quantor olaraq, biz şirkətlərə İT infrastruktur, lisenziyalaşdırma, server həlləri, şəbəkə qurulması və avtomatlaşdırma sahələrində peşəkar xidmətlər göstəririk. Hədəfimiz müştərilərimizin texnoloji ehtiyaclarını ən yüksək standartlarda qarşılamaqdır.</p>
                     <div class="about-features">
                         <div class="about-feature">
                             <div class="about-feature-icon">
@@ -157,7 +157,7 @@
                 <h2 class="section-title">Təklif etdiyimiz <span class="text-blue">həllər</span></h2>
                 <p class="section-subtitle">Şirkətinizin İT ehtiyaclarını ən müasir texnologiyalarla qarşılayırıq</p>
             </div>
-            <div class="services-grid">
+            <div class="services-grid" id="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
                         <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -258,7 +258,7 @@
                 <p class="section-subtitle">Dünya liderləri ilə əməkdaşlıq edərək ən yaxşı həlləri təklif edirik</p>
             </div>
             <div class="partners-marquee">
-                <div class="partners-track">
+                <div class="partners-track" id="partners-marquee-track">
                     <div class="partner-item"><span class="partner-name">Microsoft</span></div>
                     <div class="partner-item"><span class="partner-name">HP Enterprise</span></div>
                     <div class="partner-item"><span class="partner-name">Dell Technologies</span></div>
@@ -341,15 +341,15 @@
                     <ul>
                         <li>
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-                            +994 12 000 00 00
+                            <span data-footer-phone>+994 12 000 00 00</span>
                         </li>
                         <li>
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                            info@quantor.az
+                            <span data-footer-email>info@quantor.az</span>
                         </li>
                         <li>
                             <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            Bakı şəhəri, Azərbaycan
+                            <span data-footer-address>Bakı şəhəri, Azərbaycan</span>
                         </li>
                     </ul>
                 </div>

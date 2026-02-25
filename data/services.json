@@ -1,0 +1,112 @@
+{
+  "items": [
+  {
+    "id": "1",
+    "title": "Enterprise Lisenziya Həlləri",
+    "shortDesc": "Microsoft, VMware, Veeam və digər aparıcı brendlərin lisenziyalarının təmin edilməsi və idarə olunması.",
+    "fullDesc": "Şirkətiniz üçün lazım olan bütün proqram təminatı lisenziyalarını təmin edirik. Microsoft 365, Windows Server, SQL Server, VMware vSphere, Veeam Backup və digər enterprise səviyyəli həlləri ən sərfəli qiymətlərlə təklif edirik. Lisenziya auditi, optimallaşdırma və uyğunluq yoxlaması xidmətlərimiz də mövcuddur.",
+    "icon": "license",
+    "order": 1,
+    "active": true
+  },
+  {
+    "id": "2",
+    "title": "Enterprise Server Həlləri",
+    "shortDesc": "HP, Dell, Lenovo serverlərin satışı, quraşdırılması və texniki dəstəyi.",
+    "fullDesc": "Biznesinizin ehtiyaclarına uyğun server infrastrukturu qururuq. Fiziki və virtual server quraşdırılması, konfiqurasiyası, monitorinqi və texniki dəstəyi təmin edirik. HPE ProLiant, Dell PowerEdge, Lenovo ThinkSystem serverləri ilə etibarlı infrastruktur yaradırıq.",
+    "icon": "server",
+    "order": 2,
+    "active": true
+  },
+  {
+    "id": "3",
+    "title": "Şəbəkə Həlləri",
+    "shortDesc": "Korporativ şəbəkə dizaynı, quraşdırılması və idarə olunması.",
+    "fullDesc": "LAN, WAN, WLAN şəbəkə infrastrukturunun planlaşdırılması, quraşdırılması və optimallaşdırılması. Cisco, MikroTik, Ubiquiti, Fortinet avadanlıqları ilə yüksək performanslı və təhlükəsiz şəbəkə həlləri təklif edirik. VPN, firewall, VLAN konfiqurasiyası və şəbəkə monitorinqi xidmətlərimiz mövcuddur.",
+    "icon": "network",
+    "order": 3,
+    "active": true
+  },
+  {
+    "id": "4",
+    "title": "Kabelləşmə və Fiziki Təhlükəsizlik",
+    "shortDesc": "Strukturlaşdırılmış kabelləşmə və fiziki təhlükəsizlik sistemləri.",
+    "fullDesc": "Cat6/Cat6a strukturlaşdırılmış kabelləşmə, fiber optik xətlərin çəkilməsi, kabel menecmenti və patch panel quraşdırılması. Həmçinin CCTV, giriş-nəzarət, yanğın-söndürmə və UPS sistemlərinin quraşdırılması və inteqrasiyası xidmətləri.",
+    "icon": "cable",
+    "order": 4,
+    "active": true
+  },
+  {
+    "id": "5",
+    "title": "İT Audit",
+    "shortDesc": "İT infrastrukturunuzun hərtərəfli auditi və optimallaşdırma tövsiyələri.",
+    "fullDesc": "Şirkətinizin mövcud İT infrastrukturunun tam auditi — server, şəbəkə, təhlükəsizlik, lisenziya uyğunluğu, performans və risklərin qiymətləndirilməsi. Detallı hesabat və optimallaşdırma planı təqdim edirik.",
+    "icon": "audit",
+    "order": 5,
+    "active": true
+  },
+  {
+    "id": "6",
+    "title": "Şirkətlərin Avtomatlaşdırılması",
+    "shortDesc": "Biznes proseslərinin rəqəmsallaşdırılması və avtomatlaşdırılması.",
+    "fullDesc": "İş axınlarının avtomatlaşdırılması, ERP/CRM inteqrasiyası, sənəd dövriyyəsinin rəqəmsallaşdırılması, mühasibat proqramlarının quraşdırılması və biznes proseslərinin optimallaşdırılması. Xüsusi proqram təminatının hazırlanması xidməti də mövcuddur.",
+    "icon": "automation",
+    "order": 6,
+    "active": true
+  },
+  {
+    "id": "7",
+    "title": "Profesional İnventarizasiya Həlləri",
+    "shortDesc": "İT aktivlərinin uçotu, inventarizasiyası və idarə olunması.",
+    "fullDesc": "İT aktivlərinin (kompüter, server, şəbəkə avadanlığı, lisenziya) tam inventarizasiyası, barkod/QR etiketləmə, asset management sistemi quraşdırılması və hesabatlılıq. Şirkətinizin İT varlıqlarını tam nəzarətdə saxlayın.",
+    "icon": "inventory",
+    "order": 7,
+    "active": true
+  },
+  {
+    "id": "8",
+    "title": "Ticket və CRM Həlləri",
+    "shortDesc": "Müştəri münasibətləri və texniki dəstək idarəetmə sistemləri.",
+    "fullDesc": "Help desk, ticketing və CRM sistemlərinin seçilməsi, quraşdırılması və konfiqurasiyası. Freshdesk, Jira Service Management, Zoho CRM, 1C kimi platformaların inteqrasiyası və şirkətinizə uyğunlaşdırılması.",
+    "icon": "ticket",
+    "order": 8,
+    "active": true
+  },
+  {
+    "id": "9",
+    "title": "Server Otaqlarının Qurulması",
+    "shortDesc": "Server otaqlarının layihələndirilməsi, qurulması və istismara verilməsi.",
+    "fullDesc": "Server otaqlarının (data center) tam layihələndirilməsi — soyutma sistemi, elektrik təchizatı, UPS, kabelləşmə, rack quraşdırılması, giriş nəzarəti və monitorinq sistemləri. TIA-942 standartlarına uyğun həllər.",
+    "icon": "datacenter",
+    "order": 9,
+    "active": true
+  },
+  {
+    "id": "10",
+    "title": "Bulud Həlləri",
+    "shortDesc": "Bulud infrastrukturuna miqrasiya və bulud xidmətlərinin idarə olunması.",
+    "fullDesc": "Microsoft Azure, AWS, Google Cloud platformalarına miqrasiya, hibrid bulud həlləri, bulud təhlükəsizliyi və optimallaşdırma. Bulud arxitekturasının planlaşdırılması və idarə olunması xidmətləri.",
+    "icon": "cloud",
+    "order": 10,
+    "active": true
+  },
+  {
+    "id": "11",
+    "title": "Kibertəhlükəsizlik",
+    "shortDesc": "Korporativ kibertəhlükəsizlik strategiyası və həlləri.",
+    "fullDesc": "Firewall, endpoint protection, SIEM, DLP, penetration testing və təhlükəsizlik auditi xidmətləri. Şirkətinizin məlumat təhlükəsizliyini ən müasir texnologiyalarla qoruyuruq.",
+    "icon": "security",
+    "order": 11,
+    "active": true
+  },
+  {
+    "id": "12",
+    "title": "İT Dəstək və Outsourcing",
+    "shortDesc": "7/24 İT dəstək və tam İT outsourcing xidmətləri.",
+    "fullDesc": "Şirkətinizin İT departamentini tamamilə bizə etibar edin. Uzaqdan və yerində texniki dəstək, proaktiv monitorinq, istifadəçi dəstəyi və İT infrastrukturun idarə olunması. SLA əsaslı xidmət müqavilələri.",
+    "icon": "support",
+    "order": 12,
+    "active": true
+  }
+]
+}

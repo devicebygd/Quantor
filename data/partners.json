@@ -1,0 +1,68 @@
+{
+  "items": [
+  {
+    "id": "1",
+    "name": "Microsoft",
+    "description": "Microsoft Gold Partner — Windows, Office 365, Azure, SQL Server",
+    "website": "https://microsoft.com",
+    "order": 1,
+    "active": true
+  },
+  {
+    "id": "2",
+    "name": "HP Enterprise",
+    "description": "HPE Server, Storage və Networking həlləri",
+    "website": "https://hpe.com",
+    "order": 2,
+    "active": true
+  },
+  {
+    "id": "3",
+    "name": "Dell Technologies",
+    "description": "Dell PowerEdge Server və EMC Storage həlləri",
+    "website": "https://dell.com",
+    "order": 3,
+    "active": true
+  },
+  {
+    "id": "4",
+    "name": "Cisco",
+    "description": "Şəbəkə avadanlığı və təhlükəsizlik həlləri",
+    "website": "https://cisco.com",
+    "order": 4,
+    "active": true
+  },
+  {
+    "id": "5",
+    "name": "VMware",
+    "description": "Virtualizasiya və bulud infrastruktur həlləri",
+    "website": "https://vmware.com",
+    "order": 5,
+    "active": true
+  },
+  {
+    "id": "6",
+    "name": "Veeam",
+    "description": "Backup və disaster recovery həlləri",
+    "website": "https://veeam.com",
+    "order": 6,
+    "active": true
+  },
+  {
+    "id": "7",
+    "name": "Fortinet",
+    "description": "Firewall və kibertəhlükəsizlik həlləri",
+    "website": "https://fortinet.com",
+    "order": 7,
+    "active": true
+  },
+  {
+    "id": "8",
+    "name": "Kaspersky",
+    "description": "Antivirus və endpoint təhlükəsizlik həlləri",
+    "website": "https://kaspersky.com",
+    "order": 8,
+    "active": true
+  }
+]
+}

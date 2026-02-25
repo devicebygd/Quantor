@@ -1,0 +1,20 @@
+{
+  "siteName": "Quantor",
+  "siteTagline": "İT Həllər Tərəfdaşınız",
+  "siteDescription": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
+  "phone": "+994 12 000 00 00",
+  "email": "info@quantor.az",
+  "address": "Bakı şəhəri, Azərbaycan",
+  "facebook": "https://facebook.com/quantor.az",
+  "linkedin": "https://linkedin.com/company/quantor",
+  "instagram": "https://instagram.com/quantor.az",
+  "heroTitle": "İT infrastrukturunuzu bizimlə gücləndirin",
+  "heroSubtitle": "Müasir texnologiyalar, peşəkar komanda və etibarlı həllərlə şirkətinizin rəqəmsal transformasiyasını təmin edirik.",
+  "heroStats": [
+    { "number": "150+", "label": "Müştəri" },
+    { "number": "500+", "label": "Layihə" },
+    { "number": "10+", "label": "İl Təcrübə" },
+    { "number": "24/7", "label": "Dəstək" }
+  ],
+  "aboutText": "Quantor olaraq, biz şirkətlərə İT infrastruktur, lisenziyalaşdırma, server həlləri, şəbəkə qurulması və avtomatlaşdırma sahələrində peşəkar xidmətlər göstəririk. Hədəfimiz müştərilərimizin texnoloji ehtiyaclarını ən yüksək standartlarda qarşılamaqdır."
+}
