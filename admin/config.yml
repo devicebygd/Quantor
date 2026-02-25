@@ -1,0 +1,99 @@
+backend:
+  name: github
+  repo: devicebygd/Quantor
+  branch: main
+  base_url: https://oauth.quantor.az
+
+publish_mode: simple
+media_folder: "images"
+public_folder: "/images"
+locale: "az"
+
+collections:
+  - name: "settings"
+    label: "Sayt Parametrləri"
+    editor:
+      preview: false
+    files:
+      - name: "general"
+        label: "Ümumi Parametrlər"
+        file: "data/settings.json"
+        fields:
+          - { name: "siteName", label: "Sayt Adı", widget: "string" }
+          - { name: "siteTagline", label: "Şüar", widget: "string" }
+          - { name: "siteDescription", label: "Sayt Təsviri", widget: "text" }
+          - { name: "phone", label: "Telefon", widget: "string" }
+          - { name: "email", label: "E-poçt", widget: "string" }
+          - { name: "address", label: "Ünvan", widget: "string" }
+          - { name: "facebook", label: "Facebook URL", widget: "string", required: false }
+          - { name: "linkedin", label: "LinkedIn URL", widget: "string", required: false }
+          - { name: "instagram", label: "Instagram URL", widget: "string", required: false }
+          - { name: "heroTitle", label: "Hero Başlıq", widget: "string" }
+          - { name: "heroSubtitle", label: "Hero Alt Başlıq", widget: "text" }
+          - name: "heroStats"
+            label: "Statistikalar"
+            widget: "list"
+            fields:
+              - { name: "number", label: "Rəqəm", widget: "string" }
+              - { name: "label", label: "Etiket", widget: "string" }
+          - { name: "aboutText", label: "Haqqımızda Mətni", widget: "text" }
+
+  - name: "services"
+    label: "Xidmətlər"
+    label_singular: "Xidmət"
+    editor:
+      preview: false
+    files:
+      - name: "services_list"
+        label: "Xidmətlər Siyahısı"
+        file: "data/services.json"
+        fields:
+          - name: "items"
+            label: "Xidmətlər"
+            widget: "list"
+            label_singular: "Xidmət"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "title", label: "Başlıq", widget: "string" }
+              - { name: "shortDesc", label: "Qısa Təsvir", widget: "text" }
+              - { name: "fullDesc", label: "Tam Təsvir", widget: "text" }
+              - name: "icon"
+                label: "İkon"
+                widget: "select"
+                options:
+                  - { label: "Lisenziya", value: "license" }
+                  - { label: "Server", value: "server" }
+                  - { label: "Şəbəkə", value: "network" }
+                  - { label: "Kabel", value: "cable" }
+                  - { label: "Audit", value: "audit" }
+                  - { label: "Avtomatlaşdırma", value: "automation" }
+                  - { label: "İnventarizasiya", value: "inventory" }
+                  - { label: "Ticket", value: "ticket" }
+                  - { label: "Data Center", value: "datacenter" }
+                  - { label: "Bulud", value: "cloud" }
+                  - { label: "Təhlükəsizlik", value: "security" }
+                  - { label: "Dəstək", value: "support" }
+              - { name: "order", label: "Sıra", widget: "number", value_type: "int" }
+              - { name: "active", label: "Aktiv", widget: "boolean", default: true }
+
+  - name: "partners"
+    label: "Tərəfdaşlar"
+    label_singular: "Tərəfdaş"
+    editor:
+      preview: false
+    files:
+      - name: "partners_list"
+        label: "Tərəfdaşlar Siyahısı"
+        file: "data/partners.json"
+        fields:
+          - name: "items"
+            label: "Tərəfdaşlar"
+            widget: "list"
+            label_singular: "Tərəfdaş"
+            fields:
+              - { name: "id", label: "ID", widget: "string" }
+              - { name: "name", label: "Ad", widget: "string" }
+              - { name: "description", label: "Təsvir", widget: "text" }
+              - { name: "website", label: "Sayt URL", widget: "string" }
+              - { name: "order", label: "Sıra", widget: "number", value_type: "int" }
+              - { name: "active", label: "Aktiv", widget: "boolean", default: true }
