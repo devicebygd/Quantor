@@ -4,10 +4,8 @@ backend:
   branch: main
   base_url: https://oauth.quantor.az
 
-publish_mode: simple
 media_folder: "images"
 public_folder: "/images"
-locale: "az"
 
 collections:
   - name: "settings"
