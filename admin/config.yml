@@ -2,8 +2,7 @@ backend:
   name: github
   repo: devicebygd/Quantor
   branch: main
-  app_id: Ov23liwMsTV9ekX4MSDM
-  auth_type: pkce
+  base_url: https://oauth.quantor.az
 
 media_folder: "images"
 public_folder: "/images"
