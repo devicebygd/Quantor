@@ -1,0 +1,72 @@
+{
+  "home": {
+    "metaTitle": "Ana Səhifə — Quantor",
+    "metaDescription": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
+    "aboutBadge": "Haqqımızda",
+    "aboutTitle": "Niyə Quantor?",
+    "servicesBadge": "Xidmətlərimiz",
+    "servicesTitle": "Təklif etdiyimiz həllər",
+    "servicesSubtitle": "Şirkətinizin İT ehtiyaclarını ən müasir texnologiyalarla qarşılayırıq",
+    "servicesButton": "Bütün Xidmətlər",
+    "partnersBadge": "Tərəfdaşlarımız",
+    "partnersTitle": "Etibarlı tərəfdaşlar",
+    "partnersSubtitle": "Dünya liderləri ilə əməkdaşlıq edərək ən yaxşı həlləri təklif edirik",
+    "ctaTitle": "Layihənizi müzakirə edək",
+    "ctaText": "İT infrastrukturunuzu yüksəltmək üçün bizimlə əlaqə saxlayın. Pulsuz konsultasiya təklif edirik.",
+    "ctaButton": "Əlaqə Saxlayın",
+    "heroBtnPrimary": "Bizimlə Əlaqə",
+    "heroBtnSecondary": "Xidmətlərimiz"
+  },
+  "services": {
+    "metaTitle": "Xidmətlərimiz — Quantor",
+    "metaDescription": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
+    "headerBadge": "Xidmətlərimiz",
+    "headerTitle": "İT Xidmətlərimiz",
+    "headerSubtitle": "Şirkətinizin bütün İT ehtiyaclarını peşəkar komandamızla həll edirik",
+    "detailButton": "Ətraflı Məlumat",
+    "ctaTitle": "Xüsusi həll lazımdır?",
+    "ctaText": "Siyahıda olmayan bir xidmətə ehtiyacınız varsa, bizimlə əlaqə saxlayın. Fərdi yanaşma ilə sizin üçün ən uyğun həlli tapacağıq.",
+    "ctaButton": "Bizimlə Əlaqə"
+  },
+  "partners": {
+    "metaTitle": "Tərəfdaşlarımız — Quantor",
+    "metaDescription": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
+    "headerBadge": "Tərəfdaşlarımız",
+    "headerTitle": "Biznes Tərəfdaşlarımız",
+    "headerSubtitle": "Dünya liderləri ilə əməkdaşlıq edərək ən yaxşı həlləri təklif edirik",
+    "partnerLinkText": "Sayta keçid",
+    "ctaTitle": "Tərəfdaş olmaq istəyirsiniz?",
+    "ctaText": "Bizimlə əməkdaşlıq imkanlarını müzakirə etmək üçün əlaqə saxlayın.",
+    "ctaButton": "Bizimlə Əlaqə"
+  },
+  "contact": {
+    "metaTitle": "Əlaqə — Quantor",
+    "metaDescription": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
+    "headerBadge": "Əlaqə",
+    "headerTitle": "Bizimlə Əlaqə",
+    "headerSubtitle": "Layihəniz haqqında danışmaq və ya suallarınızı cavablandırmaq üçün buradayıq",
+    "formTitle": "Mesaj Göndərin",
+    "formSubtitle": "Formu doldurun, ən qısa zamanda sizinlə əlaqə saxlayacağıq.",
+    "formSuccess": "Mesajınız uğurla göndərildi! Ən qısa zamanda sizinlə əlaqə saxlayacağıq.",
+    "formButton": "Göndər",
+    "contactInfoTitle": "Əlaqə Məlumatları",
+    "workHoursTitle": "İş Saatları",
+    "workHours": [
+      { "days": "Bazar ertəsi - Cümə", "hours": "09:00 - 18:00" },
+      { "days": "Şənbə", "hours": "10:00 - 15:00" },
+      { "days": "Bazar", "hours": "Bağlı" }
+    ]
+  },
+  "notFound": {
+    "metaTitle": "Səhifə tapılmadı — Quantor",
+    "title": "Səhifə tapılmadı",
+    "description": "Axtardığınız səhifə mövcud deyil və ya köçürülüb.",
+    "button": "Ana Səhifəyə Qayıt"
+  },
+  "nav": {
+    "home": "Ana Səhifə",
+    "services": "Xidmətlərimiz",
+    "partners": "Tərəfdaşlarımız",
+    "contact": "Əlaqə"
+  }
+}

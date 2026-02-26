@@ -17,8 +17,19 @@ var ICONS = {
   default: '<svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>'
 };
 
+var ABOUT_ICONS = {
+  check: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+  clock: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+  shield: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>',
+  default: '<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>'
+};
+
 function getIcon(name) {
   return ICONS[name] || ICONS['default'];
+}
+
+function getAboutIcon(name) {
+  return ABOUT_ICONS[name] || ABOUT_ICONS['default'];
 }
 
 function escapeHtml(str) {
@@ -29,6 +40,16 @@ function escapeHtml(str) {
 
 function loadJSON(url) {
   return fetch(url).then(function(r) { return r.json(); });
+}
+
+function setText(id, text) {
+  var el = document.getElementById(id);
+  if (el && text) el.textContent = text;
+}
+
+function setHtml(id, html) {
+  var el = document.getElementById(id);
+  if (el && html) el.innerHTML = html;
 }
 
 // --- Data rendering functions ---
@@ -45,7 +66,8 @@ function renderServicesGrid(container, services) {
   container.innerHTML = html;
 }
 
-function renderServicesList(container, services) {
+function renderServicesList(container, services, buttonText) {
+  var btnLabel = buttonText || 'Ətraflı Məlumat';
   var html = '';
   services.filter(function(s) { return s.active; }).sort(function(a, b) { return a.order - b.order; }).forEach(function(s, i) {
     var num = String(i + 1).padStart(2, '0');
@@ -56,7 +78,7 @@ function renderServicesList(container, services) {
       '<h2>' + escapeHtml(s.title) + '</h2>' +
       '<p class="service-detail-short">' + escapeHtml(s.shortDesc) + '</p>' +
       '<p class="service-detail-full">' + escapeHtml(s.fullDesc) + '</p>' +
-      '<a href="/elaqe" class="btn btn-primary btn-sm">Ətraflı Məlumat</a>' +
+      '<a href="/elaqe" class="btn btn-primary btn-sm">' + escapeHtml(btnLabel) + '</a>' +
       '</div>' +
       '<div class="service-detail-icon">' +
       '<div class="service-detail-icon-inner">' + getIcon(s.icon) + '</div>' +
@@ -68,7 +90,6 @@ function renderServicesList(container, services) {
 function renderPartnersMarquee(container, partners) {
   var items = partners.filter(function(p) { return p.active; }).sort(function(a, b) { return a.order - b.order; });
   var html = '';
-  // Render twice for seamless marquee loop
   for (var r = 0; r < 2; r++) {
     items.forEach(function(p) {
       html += '<div class="partner-item"><span class="partner-name">' + escapeHtml(p.name) + '</span></div>';
@@ -77,7 +98,8 @@ function renderPartnersMarquee(container, partners) {
   container.innerHTML = html;
 }
 
-function renderPartnersGrid(container, partners) {
+function renderPartnersGrid(container, partners, linkText) {
+  var linkLabel = linkText || 'Sayta keçid';
   var html = '';
   partners.filter(function(p) { return p.active; }).sort(function(a, b) { return a.order - b.order; }).forEach(function(p) {
     html += '<div class="partner-card">' +
@@ -86,7 +108,7 @@ function renderPartnersGrid(container, partners) {
       '</div>' +
       '<h3>' + escapeHtml(p.name) + '</h3>' +
       '<p>' + escapeHtml(p.description) + '</p>' +
-      '<a href="' + escapeHtml(p.website) + '" target="_blank" rel="noopener" class="partner-link">Sayta keçid &rarr;</a>' +
+      '<a href="' + escapeHtml(p.website) + '" target="_blank" rel="noopener" class="partner-link">' + escapeHtml(linkLabel) + ' &rarr;</a>' +
       '</div>';
   });
   container.innerHTML = html;
@@ -104,13 +126,9 @@ function renderStats(container, stats) {
 }
 
 function renderContactInfo(settings) {
-  var el;
-  el = document.getElementById('contact-phone');
-  if (el && settings.phone) el.textContent = settings.phone;
-  el = document.getElementById('contact-email');
-  if (el && settings.email) el.textContent = settings.email;
-  el = document.getElementById('contact-address');
-  if (el && settings.address) el.textContent = settings.address;
+  setText('contact-phone', settings.phone);
+  setText('contact-email', settings.email);
+  setText('contact-address', settings.address);
 }
 
 function renderFooterContact(settings) {
@@ -123,18 +141,110 @@ function renderFooterContact(settings) {
   document.querySelectorAll('[data-footer-address]').forEach(function(el) {
     el.textContent = settings.address || '';
   });
+  document.querySelectorAll('[data-footer-desc]').forEach(function(el) {
+    el.textContent = settings.footerDesc || settings.siteDescription || '';
+  });
+  // Footer service links
+  var footerServicesUl = document.getElementById('footer-services-list');
+  if (footerServicesUl && settings.footerServiceLinks) {
+    var html = '';
+    settings.footerServiceLinks.forEach(function(link) {
+      html += '<li><a href="/xidmetler">' + escapeHtml(link.label) + '</a></li>';
+    });
+    footerServicesUl.innerHTML = html;
+  }
 }
 
 function renderHero(settings) {
-  var el;
-  el = document.getElementById('hero-tagline');
-  if (el && settings.siteTagline) el.textContent = settings.siteTagline;
-  el = document.getElementById('hero-title');
-  if (el && settings.heroTitle) el.textContent = settings.heroTitle;
-  el = document.getElementById('hero-subtitle');
-  if (el && settings.heroSubtitle) el.textContent = settings.heroSubtitle;
-  el = document.getElementById('about-text');
-  if (el && settings.aboutText) el.textContent = settings.aboutText;
+  setText('hero-tagline', settings.siteTagline);
+  setText('hero-title', settings.heroTitle);
+  setText('hero-subtitle', settings.heroSubtitle);
+  setText('about-text', settings.aboutText);
+  // About features
+  var aboutFeaturesEl = document.getElementById('about-features');
+  if (aboutFeaturesEl && settings.aboutFeatures) {
+    var html = '';
+    settings.aboutFeatures.forEach(function(f) {
+      html += '<div class="about-feature">' +
+        '<div class="about-feature-icon">' + getAboutIcon(f.icon) + '</div>' +
+        '<div><strong>' + escapeHtml(f.title) + '</strong>' +
+        '<p>' + escapeHtml(f.description) + '</p></div></div>';
+    });
+    aboutFeaturesEl.innerHTML = html;
+  }
+  // About card
+  setText('about-card-title', settings.aboutCardTitle);
+  setText('about-card-desc', settings.aboutCardDesc);
+}
+
+function renderNav(nav) {
+  if (!nav) return;
+  document.querySelectorAll('[data-nav-home]').forEach(function(el) { el.textContent = nav.home || ''; });
+  document.querySelectorAll('[data-nav-services]').forEach(function(el) { el.textContent = nav.services || ''; });
+  document.querySelectorAll('[data-nav-partners]').forEach(function(el) { el.textContent = nav.partners || ''; });
+  document.querySelectorAll('[data-nav-contact]').forEach(function(el) { el.textContent = nav.contact || ''; });
+}
+
+function renderPageHeader(page) {
+  if (!page) return;
+  setText('page-header-badge', page.headerBadge);
+  setHtml('page-header-title', page.headerTitle ? page.headerTitle.replace(/\*([^*]+)\*/, '<span class="text-blue">$1</span>') : '');
+  setText('page-header-subtitle', page.headerSubtitle);
+}
+
+function renderCTA(page) {
+  if (!page) return;
+  setText('cta-title', page.ctaTitle);
+  setText('cta-text', page.ctaText);
+  setText('cta-button', page.ctaButton);
+}
+
+function renderHomeSections(home) {
+  if (!home) return;
+  setText('about-badge', home.aboutBadge);
+  setHtml('about-title', home.aboutTitle ? home.aboutTitle.replace(/\*([^*]+)\*/, '<span class="text-blue">$1</span>') : '');
+  setText('services-badge', home.servicesBadge);
+  setHtml('services-title', home.servicesTitle ? home.servicesTitle.replace(/\*([^*]+)\*/, '<span class="text-blue">$1</span>') : '');
+  setText('services-subtitle', home.servicesSubtitle);
+  setText('services-button', home.servicesButton);
+  setText('partners-badge', home.partnersBadge);
+  setHtml('partners-title', home.partnersTitle ? home.partnersTitle.replace(/\*([^*]+)\*/, '<span class="text-blue">$1</span>') : '');
+  setText('partners-subtitle', home.partnersSubtitle);
+  setText('cta-title', home.ctaTitle);
+  setText('cta-text', home.ctaText);
+  setText('cta-button', home.ctaButton);
+  setText('hero-btn-primary', home.heroBtnPrimary);
+  setText('hero-btn-secondary', home.heroBtnSecondary);
+}
+
+function renderContactPage(contact) {
+  if (!contact) return;
+  setText('form-title', contact.formTitle);
+  setText('form-subtitle', contact.formSubtitle);
+  setText('form-button-text', contact.formButton);
+  setText('contact-info-title', contact.contactInfoTitle);
+  setText('work-hours-title', contact.workHoursTitle);
+  // Success message
+  var successTextEl = document.getElementById('form-success-text');
+  if (successTextEl && contact.formSuccess) successTextEl.textContent = contact.formSuccess;
+  // Work hours
+  var workHoursEl = document.getElementById('work-hours-list');
+  if (workHoursEl && contact.workHours) {
+    var html = '';
+    contact.workHours.forEach(function(wh) {
+      html += '<div class="work-hours-row">' +
+        '<span>' + escapeHtml(wh.days) + '</span>' +
+        '<span>' + escapeHtml(wh.hours) + '</span></div>';
+    });
+    workHoursEl.innerHTML = html;
+  }
+}
+
+function renderNotFound(notFound) {
+  if (!notFound) return;
+  setText('notfound-title', notFound.title);
+  setText('notfound-desc', notFound.description);
+  setText('notfound-button', notFound.button);
 }
 
 function initAnimations() {
@@ -155,7 +265,6 @@ function initAnimations() {
     observer.observe(el);
   });
 
-  // Counter animation for stats
   var statNumbers = document.querySelectorAll('.stat-number');
   var statsObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -189,8 +298,20 @@ function animateCounter(el) {
   requestAnimationFrame(update);
 }
 
+// --- Detect current page ---
+function getCurrentPage() {
+  var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/$/, '') || '/';
+  if (path === '/' || path === '') return 'home';
+  if (path.indexOf('/xidmetler') === 0) return 'services';
+  if (path.indexOf('/terefdaslar') === 0) return 'partners';
+  if (path.indexOf('/elaqe') === 0) return 'contact';
+  return 'notFound';
+}
+
 // --- Main ---
 document.addEventListener('DOMContentLoaded', function() {
+
+  var currentPage = getCurrentPage();
 
   // Footer year
   var yearEl = document.getElementById('footer-year');
@@ -246,44 +367,83 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // --- Load dynamic content ---
+  // --- Element references ---
   var servicesGrid = document.getElementById('services-grid');
   var servicesList = document.getElementById('services-list');
   var partnersMarquee = document.getElementById('partners-marquee-track');
   var partnersGrid = document.getElementById('partners-grid');
   var statsGrid = document.getElementById('stats-grid');
-  var hasHero = document.getElementById('hero-title');
 
-  // Load settings for all pages (footer contact, hero, etc.)
+  // --- Load pages.json for page-specific content ---
+  loadJSON('/data/pages.json').then(function(pages) {
+    // Navigation labels
+    renderNav(pages.nav);
+
+    // Page-specific rendering
+    if (currentPage === 'home') {
+      renderHomeSections(pages.home);
+    } else if (currentPage === 'services') {
+      renderPageHeader(pages.services);
+      renderCTA(pages.services);
+    } else if (currentPage === 'partners') {
+      renderPageHeader(pages.partners);
+      renderCTA(pages.partners);
+    } else if (currentPage === 'contact') {
+      renderPageHeader(pages.contact);
+      renderContactPage(pages.contact);
+    } else if (currentPage === 'notFound') {
+      renderNotFound(pages.notFound);
+    }
+
+    // Load services with page-specific button text
+    if (servicesGrid || servicesList) {
+      loadJSON('/data/services.json').then(function(data) {
+        var services = data.items || data;
+        if (servicesGrid) renderServicesGrid(servicesGrid, services);
+        if (servicesList) renderServicesList(servicesList, services, pages.services && pages.services.detailButton);
+        initAnimations();
+      }).catch(function() {});
+    }
+
+    // Load partners with page-specific link text
+    if (partnersMarquee || partnersGrid) {
+      loadJSON('/data/partners.json').then(function(data) {
+        var partners = data.items || data;
+        if (partnersMarquee) renderPartnersMarquee(partnersMarquee, partners);
+        if (partnersGrid) renderPartnersGrid(partnersGrid, partners, pages.partners && pages.partners.partnerLinkText);
+        initAnimations();
+      }).catch(function() {});
+    }
+  }).catch(function() {
+    // Fallback: load services/partners without page text
+    if (servicesGrid || servicesList) {
+      loadJSON('/data/services.json').then(function(data) {
+        var services = data.items || data;
+        if (servicesGrid) renderServicesGrid(servicesGrid, services);
+        if (servicesList) renderServicesList(servicesList, services);
+        initAnimations();
+      }).catch(function() {});
+    }
+    if (partnersMarquee || partnersGrid) {
+      loadJSON('/data/partners.json').then(function(data) {
+        var partners = data.items || data;
+        if (partnersMarquee) renderPartnersMarquee(partnersMarquee, partners);
+        if (partnersGrid) renderPartnersGrid(partnersGrid, partners);
+        initAnimations();
+      }).catch(function() {});
+    }
+  });
+
+  // Load settings for all pages
   loadJSON('/data/settings.json').then(function(settings) {
     renderFooterContact(settings);
-    if (hasHero) renderHero(settings);
+    if (currentPage === 'home') renderHero(settings);
     if (statsGrid && settings.heroStats) {
       renderStats(statsGrid, settings.heroStats);
       initAnimations();
     }
     renderContactInfo(settings);
   }).catch(function() {});
-
-  // Load services
-  if (servicesGrid || servicesList) {
-    loadJSON('/data/services.json').then(function(data) {
-      var services = data.items || data;
-      if (servicesGrid) renderServicesGrid(servicesGrid, services);
-      if (servicesList) renderServicesList(servicesList, services);
-      initAnimations();
-    }).catch(function() {});
-  }
-
-  // Load partners
-  if (partnersMarquee || partnersGrid) {
-    loadJSON('/data/partners.json').then(function(data) {
-      var partners = data.items || data;
-      if (partnersMarquee) renderPartnersMarquee(partnersMarquee, partners);
-      if (partnersGrid) renderPartnersGrid(partnersGrid, partners);
-      initAnimations();
-    }).catch(function() {});
-  }
 
   // Init animations for static content
   initAnimations();

@@ -35,6 +35,27 @@ collections:
               - { name: "number", label: "Rəqəm", widget: "string" }
               - { name: "label", label: "Etiket", widget: "string" }
           - { name: "aboutText", label: "Haqqımızda Mətni", widget: "text" }
+          - name: "aboutFeatures"
+            label: "Haqqımızda Xüsusiyyətlər"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Başlıq", widget: "string" }
+              - { name: "description", label: "Təsvir", widget: "string" }
+              - name: "icon"
+                label: "İkon"
+                widget: "select"
+                options:
+                  - { label: "Yoxlama", value: "check" }
+                  - { label: "Saat", value: "clock" }
+                  - { label: "Qalxan", value: "shield" }
+          - { name: "aboutCardTitle", label: "Haqqımızda Kart Başlıq", widget: "string" }
+          - { name: "aboutCardDesc", label: "Haqqımızda Kart Təsvir", widget: "string" }
+          - { name: "footerDesc", label: "Footer Təsvir", widget: "text" }
+          - name: "footerServiceLinks"
+            label: "Footer Xidmət Linkləri"
+            widget: "list"
+            fields:
+              - { name: "label", label: "Etiket", widget: "string" }
 
   - name: "services"
     label: "Xidmətlər"
@@ -95,3 +116,96 @@ collections:
               - { name: "website", label: "Sayt URL", widget: "string" }
               - { name: "order", label: "Sıra", widget: "number", value_type: "int" }
               - { name: "active", label: "Aktiv", widget: "boolean", default: true }
+
+  - name: "pages"
+    label: "Səhifələr"
+    editor:
+      preview: false
+    files:
+      - name: "pages_content"
+        label: "Səhifə Məzmunları"
+        file: "data/pages.json"
+        fields:
+          - name: "nav"
+            label: "Naviqasiya Etiketləri"
+            widget: "object"
+            fields:
+              - { name: "home", label: "Ana Səhifə", widget: "string" }
+              - { name: "services", label: "Xidmətlər", widget: "string" }
+              - { name: "partners", label: "Tərəfdaşlar", widget: "string" }
+              - { name: "contact", label: "Əlaqə", widget: "string" }
+          - name: "home"
+            label: "Ana Səhifə"
+            widget: "object"
+            fields:
+              - { name: "metaTitle", label: "Meta Başlıq", widget: "string" }
+              - { name: "metaDescription", label: "Meta Təsvir", widget: "text" }
+              - { name: "aboutBadge", label: "Haqqımızda Badge", widget: "string" }
+              - { name: "aboutTitle", label: "Haqqımızda Başlıq", widget: "string" }
+              - { name: "servicesBadge", label: "Xidmətlər Badge", widget: "string" }
+              - { name: "servicesTitle", label: "Xidmətlər Başlıq", widget: "string" }
+              - { name: "servicesSubtitle", label: "Xidmətlər Alt Başlıq", widget: "text" }
+              - { name: "servicesButton", label: "Xidmətlər Düymə", widget: "string" }
+              - { name: "partnersBadge", label: "Tərəfdaşlar Badge", widget: "string" }
+              - { name: "partnersTitle", label: "Tərəfdaşlar Başlıq", widget: "string" }
+              - { name: "partnersSubtitle", label: "Tərəfdaşlar Alt Başlıq", widget: "text" }
+              - { name: "ctaTitle", label: "CTA Başlıq", widget: "string" }
+              - { name: "ctaText", label: "CTA Mətn", widget: "text" }
+              - { name: "ctaButton", label: "CTA Düymə", widget: "string" }
+              - { name: "heroBtnPrimary", label: "Hero Əsas Düymə", widget: "string" }
+              - { name: "heroBtnSecondary", label: "Hero İkinci Düymə", widget: "string" }
+          - name: "services"
+            label: "Xidmətlər Səhifəsi"
+            widget: "object"
+            fields:
+              - { name: "metaTitle", label: "Meta Başlıq", widget: "string" }
+              - { name: "metaDescription", label: "Meta Təsvir", widget: "text" }
+              - { name: "headerBadge", label: "Başlıq Badge", widget: "string" }
+              - { name: "headerTitle", label: "Səhifə Başlığı", widget: "string" }
+              - { name: "headerSubtitle", label: "Səhifə Alt Başlığı", widget: "text" }
+              - { name: "detailButton", label: "Ətraflı Düymə Mətni", widget: "string" }
+              - { name: "ctaTitle", label: "CTA Başlıq", widget: "string" }
+              - { name: "ctaText", label: "CTA Mətn", widget: "text" }
+              - { name: "ctaButton", label: "CTA Düymə", widget: "string" }
+          - name: "partners"
+            label: "Tərəfdaşlar Səhifəsi"
+            widget: "object"
+            fields:
+              - { name: "metaTitle", label: "Meta Başlıq", widget: "string" }
+              - { name: "metaDescription", label: "Meta Təsvir", widget: "text" }
+              - { name: "headerBadge", label: "Başlıq Badge", widget: "string" }
+              - { name: "headerTitle", label: "Səhifə Başlığı", widget: "string" }
+              - { name: "headerSubtitle", label: "Səhifə Alt Başlığı", widget: "text" }
+              - { name: "partnerLinkText", label: "Tərəfdaş Link Mətni", widget: "string" }
+              - { name: "ctaTitle", label: "CTA Başlıq", widget: "string" }
+              - { name: "ctaText", label: "CTA Mətn", widget: "text" }
+              - { name: "ctaButton", label: "CTA Düymə", widget: "string" }
+          - name: "contact"
+            label: "Əlaqə Səhifəsi"
+            widget: "object"
+            fields:
+              - { name: "metaTitle", label: "Meta Başlıq", widget: "string" }
+              - { name: "metaDescription", label: "Meta Təsvir", widget: "text" }
+              - { name: "headerBadge", label: "Başlıq Badge", widget: "string" }
+              - { name: "headerTitle", label: "Səhifə Başlığı", widget: "string" }
+              - { name: "headerSubtitle", label: "Səhifə Alt Başlığı", widget: "text" }
+              - { name: "formTitle", label: "Form Başlığı", widget: "string" }
+              - { name: "formSubtitle", label: "Form Alt Başlığı", widget: "text" }
+              - { name: "formSuccess", label: "Uğurlu Göndərmə Mesajı", widget: "text" }
+              - { name: "formButton", label: "Göndər Düyməsi Mətni", widget: "string" }
+              - { name: "contactInfoTitle", label: "Əlaqə Məlumatları Başlığı", widget: "string" }
+              - { name: "workHoursTitle", label: "İş Saatları Başlığı", widget: "string" }
+              - name: "workHours"
+                label: "İş Saatları"
+                widget: "list"
+                fields:
+                  - { name: "days", label: "Günlər", widget: "string" }
+                  - { name: "hours", label: "Saatlar", widget: "string" }
+          - name: "notFound"
+            label: "404 Səhifəsi"
+            widget: "object"
+            fields:
+              - { name: "metaTitle", label: "Meta Başlıq", widget: "string" }
+              - { name: "title", label: "Başlıq", widget: "string" }
+              - { name: "description", label: "Təsvir", widget: "text" }
+              - { name: "button", label: "Düymə Mətni", widget: "string" }
