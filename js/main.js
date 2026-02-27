@@ -153,6 +153,16 @@ function renderFooterContact(settings) {
     });
     footerServicesUl.innerHTML = html;
   }
+  // Social media links
+  document.querySelectorAll('[data-social-facebook]').forEach(function(el) {
+    if (settings.facebook) el.href = settings.facebook;
+  });
+  document.querySelectorAll('[data-social-linkedin]').forEach(function(el) {
+    if (settings.linkedin) el.href = settings.linkedin;
+  });
+  document.querySelectorAll('[data-social-instagram]').forEach(function(el) {
+    if (settings.instagram) el.href = settings.instagram;
+  });
 }
 
 function renderHero(settings) {
@@ -242,7 +252,7 @@ function renderContactPage(contact) {
 
 function renderNotFound(notFound) {
   if (!notFound) return;
-  setText('notfound-title', notFound.title);
+  setHtml('notfound-title', notFound.title ? notFound.title.replace(/\*([^*]+)\*/, '<span class="text-blue">$1</span>') : '');
   setText('notfound-desc', notFound.description);
   setText('notfound-button', notFound.button);
 }
