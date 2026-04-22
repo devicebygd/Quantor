@@ -2,8 +2,8 @@
   "siteName": "Quantor",
   "siteTagline": "İT Həllər Tərəfdaşınız",
   "siteDescription": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
-  "phone": "+994 70 882 23 45",
-  "email": "info@quantor.az",
+  "phone": "+994 70 510 08 23",
+  "email": "sales@quantor.az",
   "address": "Bakı şəhəri, Azərbaycan",
   "facebook": "https://facebook.com/quantor.az",
   "linkedin": "https://linkedin.com/company/quantor",
@@ -24,5 +24,19 @@
       "label": "Dəstək"
     }
   ],
-  "aboutText": "Quantor MMC olaraq, biz şirkətlərə İT infrastruktur, lisenziyalaşdırma, server həlləri, şəbəkə qurulması və avtomatlaşdırma sahələrində peşəkar xidmətlər göstəririk. Hədəfimiz müştərilərimizin texnoloji ehtiyaclarını ən yüksək standartlarda qarşılamaqdır."
+  "aboutText": "Quantor MMC olaraq, biz şirkətlərə İT infrastruktur, lisenziyalaşdırma, server həlləri, şəbəkə qurulması və avtomatlaşdırma sahələrində peşəkar xidmətlər göstəririk. Hədəfimiz müştərilərimizin texnoloji ehtiyaclarını ən yüksək standartlarda qarşılamaqdır.",
+  "aboutFeatures": [
+    { "title": "Sertifikatlı Mütəxəssislər", "description": "Peşəkar və təcrübəli İT komandası", "icon": "check" },
+    { "title": "7/24 Dəstək", "description": "Fasiləsiz texniki dəstək xidməti", "icon": "clock" },
+    { "title": "Etibarlı Həllər", "description": "Dünya standartlarına uyğun infrastruktur", "icon": "shield" }
+  ],
+  "aboutCardTitle": "Tam İT Həlləri",
+  "aboutCardDesc": "Bir çatı altında bütün İT ehtiyaclarınız",
+  "footerDesc": "Quantor — müasir texnologiyalar və peşəkar komanda ilə şirkətinizin İT infrastrukturunu optimallaşdırın.",
+  "footerServiceLinks": [
+    { "label": "Server Həlləri" },
+    { "label": "Şəbəkə Həlləri" },
+    { "label": "Lisenziyalar" },
+    { "label": "İT Audit" }
+  ]
 }
